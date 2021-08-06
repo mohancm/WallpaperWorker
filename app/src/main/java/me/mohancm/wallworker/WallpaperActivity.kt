@@ -40,7 +40,7 @@ open class WallpaperActivity : AppCompatActivity() {
 
         setWall = findViewById(R.id.set_wall_button)
         wallImage = findViewById(R.id.wallpaper_image)
-        var viewModel: WallpaperViewModel = ViewModelProvider(this).get(WallpaperViewModel::class.java)
+        var viewModel: WallpaperViewModel = ViewModelProvider(this, ViewModelProvider.AndroidViewModelFactory.getInstance(application)).get(WallpaperViewModel::class.java)
 
         // Image uri should be stored in the ViewModel; put it there then display
         val imageUriExtra = intent.getStringExtra(KEY_IMAGE_URI)
